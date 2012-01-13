@@ -1,9 +1,9 @@
 namespace :csv do
 #grouped everything in the csv namespace since all these tasks are revolving around same issue
-require 'fastercsv'
+# require 'fastercsv'
 	desc "Deletes Contacts table to avoid duplicates before loading in data"
 	task :table_delete => :environment do
-		Contact.destroy(Contact.all)
+		Contact.destroy_all
 	end
 
 	desc "Load contact data from csv"
