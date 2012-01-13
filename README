@@ -1,0 +1,1 @@
+CSV Data Importer - A custom rake task that imports and manipulates a data CSV into a Rails project's database.
