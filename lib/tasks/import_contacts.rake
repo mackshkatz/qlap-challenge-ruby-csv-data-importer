@@ -13,14 +13,13 @@ namespace :csv do
 				print message
 				STDIN.gets.chomp
 			end
-			@nick_name = ask("Please enter #{[0]} nickname: ")
-			Contact.create(:name => row[0], :email => row[1], :gender => row[2], :color => row[3], :lucky_number => row[4], :created_at => row[5], :updated_at => row[6], :nick_name => @nick_name)
+			nick_name = ask("What is #{row[0]}'s nickname?: ")
+			relationship = ask("What is #{row[0]}'s relationship with you?: ")
+			Contact.create(:name => row[0], :email => row[1], :gender => row[2], :color => row[3], :lucky_number => row[4], :created_at => row[5], :updated_at => row[6], :nick_name => nick_name, :relationship => relationship)
 		end
 	end
 
 	desc "First deletes the table and then repopulates it with the CSV"
 	task :table_refresh => [:table_delete, :import_contacts] do
 	end
-
-
 end
